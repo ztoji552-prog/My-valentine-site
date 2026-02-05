@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 88c-1-1-2-2-3-3-5-5-10-10-15-15-10-10-20-20-20-30 0-10 8-18 18-18 6 0 12 3 16 8 4-5 10-8 16-8 10 0 18 8 18 18 0 10-10 20-20 30-5 5-10 10-15 15-1 1-2 2-3 3z" fill="%23ff69b4" opacity="0.1"/></svg>') repeat;
+            z-index: -1;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff69b4;
+        }
+        .options {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .option {
+            margin: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        #rejection {
+            display: none;
+            font-size: 2em;
+            color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-bg"></div>
+    <div id="question">
+        <h1>Will you be my Valentine?</h1>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+    <div id="rejection">
+        <h1>I can't accept it.</h1>
+    </div>
+    <div id="options" class="options">
+        <h1>Yay! Choose one:</h1>
+        <div class="option" id="song">
+            <h2>1. A Song: I Think They Call This Love</h2>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <!-- Replace with your song's YouTube embed URL, e.g., a romantic track -->
+        </div>
+        <div class="option" id="bouquet">
+            <h2>2. A Bouquet and Love Notes</h2>
+            <img src="https://via.placeholder.com/400x300/ff69b4/ffffff?text=Roses+for+You" alt="Bouquet">
+            <p>Love Notes: My dearest, your smile lights up my world. Happy Valentine's Day! ❤️</p>
+            <!-- Replace with your own image URL and notes -->
+        </div>
+        <div class="option" id="paragraph">
+            <h2>3. A Lovely Paragraph</h2>
+            <p>In the quiet moments of life, I find myself thinking of you. Your laughter is my favorite melody, your eyes the stars that guide me home. Being with you feels like the most beautiful dream come true. I love you more than words can say. Happy Valentine's Day, my forever Valentine. 💕</p>
+            <!-- Customize this paragraph as you wish -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yes').addEventListener('click', function() {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('options').style.display = 'flex';
+        });
+
+        document.getElementById('no').addEventListener('click', function() {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('rejection').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
